@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fromage</title>
+</head>
+<body>
+    <h1>Fromage! Welcome!</h1>
+    <h2>My CHEESE!</h2>
+    {% for cheese in cheeses %}
+
+    <div>{{ cheese.name }}</div>
+        
+    {% endfor %}
+
+    <h2>Recommended Cheeses</h2>
+    {% for review in reviews %}
+        <div>
+            <p>Cheese: {{ review.cheese.name }}</p>
+            <p>Reviewer: {{ review.reviewer }}</p>
+            <p>Rating: {{ review.rating }}</p>
+            <p>Date: {{ review.date|date:"d/m/Y" }}</p>
+        </div> 
+
+        
+    {% endfor %}
+</body>
+</html>
